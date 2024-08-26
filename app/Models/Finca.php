@@ -18,4 +18,8 @@ class Finca extends Model
     public function riegos(){
         return $this->hasMany(Riego::class);
     }
+
+    public function tratamientos(){
+        return $this->hasMany(Tratamiento::class);
+    }
 }
