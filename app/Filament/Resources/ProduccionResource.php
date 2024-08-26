@@ -21,6 +21,8 @@ class ProduccionResource extends Resource
     protected static ?string $model = Produccion::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
+    protected static ?string $navigationLabel = 'Produccion';
+    protected static ?string $navigationGroup = 'Operaciones';
 
     public static function form(Form $form): Form
     {
@@ -51,10 +53,11 @@ class ProduccionResource extends Resource
             ])
             ->filters([
                 SelectFilter::make('finca_id')
-                ->label("Finca")
+                    ->label("Finca")
                     ->options(
                         Finca::all()
-                            ->pluck('nombre', 'id')->toArray()
+                            ->pluck('nombre', 'id')
+                            ->toArray()
                     )
             ])
             ->actions([

@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('riegos', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('finca_id');
+            $table->date('fecha');
+            $table->integer('cantidad');
+            $table->integer('tiempo');
+            $table->string('descripcion');
+
             $table->timestamps();
         });
     }
