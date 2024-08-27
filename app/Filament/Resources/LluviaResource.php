@@ -18,7 +18,7 @@ class LluviaResource extends Resource
 {
     protected static ?string $model = Lluvia::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-cloud';
     protected static ?string $navigationGroup = 'Clima';
     protected static ?int $navigationSort = 7;
 
@@ -31,6 +31,7 @@ class LluviaResource extends Resource
                 Forms\Components\DatePicker::make('fecha')
                     ->required(),
                 Forms\Components\TextInput::make('cantidad')
+                    ->label("Cantidad (litros)")
                     ->required(),
             ]);
     }

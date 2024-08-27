@@ -24,13 +24,18 @@ class FincaResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nombre')
+                    ->maxLength(255)
                     ->required(),
                 Forms\Components\TextInput::make('dimensiones')
+                    ->numeric()
                     ->label("Dimensiones (metros)"),
                 Forms\Components\TextInput::make('num_parras')
-                    ->label("Numero de plantas"),
+                    ->numeric()
+                    ->minValue(0)
+                    ->label("Numero de parras"),
                 Forms\Components\TextInput::make('terreno'),
                 Forms\Components\TextInput::make('ubicacion')
+                    ->maxLength(255),
             ]);
     }
 
@@ -39,15 +44,23 @@ class FincaResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nombre')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('dimensiones'),
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('dimensiones')
+                    ->label("Dimensiones (m²)")
+                    ->sortable()
+                    ->numeric()
+                    ->suffix(" m²"),
                 Tables\Columns\TextColumn::make('num_parras')
-                    ->label("Numero de plantas")
+                    ->label("Numero de parras")
+                    ->numeric()
+                    ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('terreno')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('ubicacion')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(30),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -59,7 +72,8 @@ class FincaResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('ubicacion')
+                    ->options(Finca::all()->pluck('ubicacion', 'ubicacion'))
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

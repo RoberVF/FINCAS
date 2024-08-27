@@ -35,6 +35,7 @@ class ProduccionResource extends Resource
                 Forms\Components\DatePicker::make('fecha')
                     ->required(),
                 Forms\Components\TextInput::make('cantidad')
+                    ->label("Cantidad (kg)")
                     ->required(),
                 Forms\Components\TextInput::make('descripcion'),
             ]);

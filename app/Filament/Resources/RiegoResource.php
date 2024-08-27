@@ -34,13 +34,14 @@ class RiegoResource extends Resource
                 Forms\Components\DatePicker::make('fecha')
                     ->required(),
                 Forms\Components\TextInput::make('cantidad')
+                    ->label("Cantidad (litros)")
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('tiempo')
+                    ->label("Tiempo de riego (minutos)")
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('descripcion')
-                    ->required(),
+                Forms\Components\TextInput::make('descripcion'),
             ]);
     }
 

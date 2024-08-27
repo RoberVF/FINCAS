@@ -34,6 +34,8 @@ class TratamientoResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('descripcion')
                     ->required(),
+                Forms\Components\TextInput::make('cantidad')
+                    ->label("Cantidad"),
             ]);
     }
 
