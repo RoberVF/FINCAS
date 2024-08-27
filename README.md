@@ -37,24 +37,24 @@ La decisión de migrar de MERN stack a Laravel y FilamentPHP se basó en los sig
 proyecto/
 │
 ├── app/
-│ ├── Http/
-│ ├── Models/
-│ └── Filament/
-│ └── Resources/
-│ ├── FincaResource.php
-│ ├── ProduccionResource.php
-│ ├── RiegoResource.php
-│ ├── TratamientoResource.php
-│ └── LluviaResource.php
+│   ├── Http/
+│   ├── Models/
+│   └── Filament/
+│       └── Resources/
+│           ├── FincaResource.php
+│           ├── ProduccionResource.php
+│           ├── RiegoResource.php
+│           ├── TratamientoResource.php
+│           └── LluviaResource.php
 │
 ├── database/
-│ └── migrations/
+│   └── migrations/
 │
 ├── resources/
-│ └── views/
+│   └── views/
 │
 └── routes/
-└── web.php
+    └── web.php
 
 
 ## Instalación y Configuración
