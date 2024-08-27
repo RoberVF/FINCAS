@@ -33,30 +33,6 @@ La decisión de migrar de MERN stack a Laravel y FilamentPHP se basó en los sig
 3. **Comunicación Backend-Frontend**: Optimizar y simplificar la interacción entre el backend y el frontend.
 4. **Desarrollo Rápido**: Aprovechar las capacidades de Laravel y FilamentPHP para un desarrollo más rápido y eficiente.
 
-## Estructura del Proyecto
-proyecto/
-│
-├── app/
-│   ├── Http/
-│   ├── Models/
-│   └── Filament/
-│       └── Resources/
-│           ├── FincaResource.php
-│           ├── ProduccionResource.php
-│           ├── RiegoResource.php
-│           ├── TratamientoResource.php
-│           └── LluviaResource.php
-│
-├── database/
-│   └── migrations/
-│
-├── resources/
-│   └── views/
-│
-└── routes/
-    └── web.php
-
-
 ## Instalación y Configuración
 
 1. Clonar el repositorio
