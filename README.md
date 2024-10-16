@@ -39,7 +39,18 @@ La decisión de migrar de MERN stack a Laravel y FilamentPHP se basó en los sig
 2. Instalar dependencias: `composer install`
 3. Configurar el archivo `.env`
 4. Ejecutar migraciones: `php artisan migrate`
-5. Iniciar el servidor: `php artisan serve`
+5. Generar la clave de cifrado: `php artisan key:generate`
+6. Eliminar el cache de la configuracion: `php artisan config:clear`
+7. Eliminar el cache de la aplicacion: `php artisan cache:clear`
+8. Iniciar el servidor: `php artisan serve`
+
+**Se debe establecer en el .env DB_DATABASE=ruta/absoluta/de/la/ddbb**
+
+## Mejoras de rendimiento en desarrollo
+
+1. Desactivar el debugger en el .env: `APP_DEBUG=false`
+2. Cachear configuracion, rutas y vistas: `php artisan config:cache && php artisan route:cache && php artisan view:cache`
+3. Utilizar bases de datos mas robustas que SQLite :)
 
 ## Uso
 
@@ -49,6 +60,3 @@ Acceder a la aplicación a través del navegador y utilizar la interfaz de Filam
 
 Las contribuciones son bienvenidas. Por favor, abra un issue para discutir los cambios propuestos antes de realizar un pull request.
 
-## Licencia
-
-[MIT License](https://opensource.org/licenses/MIT)
